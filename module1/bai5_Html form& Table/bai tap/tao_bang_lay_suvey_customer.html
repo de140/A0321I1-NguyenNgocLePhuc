@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Tạo form lấy survey khách hàng</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<div class="app">
+    <header>
+        <h1>Market Research Survey</h1>
+        <p>Please take a few moments to complete this satisfaction survey.</p>
+    </header>
+    <form action="tao_form_lay_survey.html" name="info">
+        <div class="age">
+            <h5>What is your age range?</h5>
+            <select>
+                <option>18 - 24</option>
+                <option>25 - 34</option>
+                <option>35 - 50</option>
+                <option>50+</option>
+            </select>
+        </div>
+        <div class="income">
+            <h5>What is your yearly income range?</h5>
+            <select>
+                <option>$0 - $25,000</option>
+                <option>$25,001 - $50,000</option>
+                <option>$50,001 - $100,000</option>
+                <option>$100,000+</option>
+            </select>
+        </div>
+        <ul class="gender">
+            <h5>Gender Identity</h5>
+            <li><input type="radio" name="gender"><label>Male</label></li>
+            <li><input type="radio" name="gender"><label>Female</label></li>
+            <li><input type="radio" name="gender"><label>Nonbinary</label></li>
+            <li>
+                <input type="radio" name="gender"><label>Other</label> <br>
+                <input class="input_other" type="text" name="gender">
+                <p>
+                    <span>Maximum of <strong>250</strong> characters.</span>
+                    <span class="cur_used"><i>Currently Used: </i><strong>0</strong><i> characters.</i></span>
+                </p>
+            </li>
+        </ul>
+        <ul class="product">
+            <h5>Which of the following products have your
+                purchased in the last 2 months.
+                Please check all that apply.
+            </h5>
+            <li><input type="checkbox" name="product"><label>Product 1</label></li>
+            <li><input type="checkbox" name="product"><label>Product 2</label></li>
+            <li><input type="checkbox" name="product"><label>Product 3</label></li>
+        </ul>
+        <ul class="use_product">
+            <h5>
+                How often would you use our new product?
+            </h5>
+            <li><input type="radio" name="use_product"><label>Daily</label></li>
+            <li><input type="radio" name="use_product"><label>Weekly</label></li>
+            <li><input type="radio" name="use_product"><label>Monthly</label></li>
+        </ul>
+        <div class="price">
+            <h5>What would you pay for the new product?</h5>
+            <div>
+                <span>$</span>
+                <input type="text">
+                <span>.</span>
+                <input class="cents" type="text">
+            </div>
+            <div class="unit">
+                <span>Dollars</span>
+                <span>Cents</span>
+            </div>
+        </div>
+        <div class="text_write">
+            <h5>What features would you like to see in the new product.</h5>
+            <textarea></textarea>
+        </div>
+        <table cellspacing="0">
+            <caption>Please rate your level of agreement with the following statements.</caption>
+            <tr class="dark_head" align="center">
+                <td class="thead"></td>
+                <td class="thead">Strongly Disagree</td>
+                <td class="thead">Disagree</td>
+                <td class="thead">Agree</td>
+                <td class="thead">Strongly Agree</td>
+            </tr>
+            <tr class="effect" align="center">
+                <td class="decription" align="left">Our products are priced fairly.</td>
+                <td class="check"><input type="radio" name="review"><p>1</p></td>
+                <td class="check"><input type="radio" name="review"><p>2</p></td>
+                <td class="check"><input type="radio" name="review"><p>3</p></td>
+                <td class="check"><input type="radio" name="review"><p>4</p></td>
+            </tr>
+            <tr class="dark effect" align="center">
+                <td class="decription" align="left">Our products are high quality.</td>
+                <td class="check"><input type="radio" name="review_1"><p>1</p></td>
+                <td class="check"><input type="radio" name="review_1"><p>2</p></td>
+                <td class="check"><input type="radio" name="review_1"><p>3</p></td>
+                <td class="check"><input type="radio" name="review_1"><p>4</p></td>
+            </tr>
+            <tr class="effect" align="center">
+                <td class="decription" align="left">You would recommend our product to a friend or coworker.</td>
+                <td class="check"><input type="radio" name="review_2"><p>1</p></td>
+                <td class="check"><input type="radio" name="review_2"><p>2</p></td>
+                <td class="check"><input type="radio" name="review_2"><p>3</p></td>
+                <td class="check"><input type="radio" name="review_2"><p>4</p></td>
+            </tr>
+        </table>
+        <input class="btn" type="submit" name="submit" value="Submit">
+    </form>
+    <footer>
+        <a href="https://www.wufoo.com/?utm_source=optimize&utm_medium=rd&utm_campaign=homepage-messaging&utm_content=control">
+            <img src="./.idea/wufoo-logo.svg">
+        </a>
+    </footer>
+</div>
+<style>
+    .app {
+        font-family: sans-serif, Tahoma, "Lucida Sans Unicode";
+    }
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    h3 {
+        font-size: 20px;
+        font-weight: normal;
+        letter-spacing: 1px;
+        margin-left: 5px;
+        padding: 10px;
+    }
+    h5 {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    header p {
+        padding: 5px 0 20px 15px;
+        font-size: 13px;
+        color: rgba(0, 0, 0, .7);
+        letter-spacing: 1px;
+        border-bottom: 1px dotted #ccc;
+    }
+    .age {
+        margin-top: 5px;
+        padding: 15px;
+    }
+    .income,
+    .gender,
+    .product,
+    .use_product,
+    .text_write,
+    .price {
+        padding: 15px;
+    }
+    .age select,
+    .income select {
+        width: 400px;
+        height: 23px;
+        outline: none;
+    }
+    .age:hover,
+    .income:hover,
+    .gender:hover,
+    .product:hover,
+    .use_product:hover,
+    .price:hover,
+    .text_write:hover,
+    .effect:hover {
+        background: #FFF7C0;
+    }
+    .gender li,
+    .product li,
+    .use_product li {
+        padding: 5px 0;
+        list-style: none;
+        font-size: 13px;
+        color: rgba(0, 0, 0, .7);
+    }
+    .gender label,
+    .product label,
+    .use_product label{
+        padding-left: 10px;
+    }
+    .input_other {
+        width: 145px;
+        padding: 2px;
+        margin: 10px 0 5px 25px;
+    }
+    .gender p {
+        margin-left: 25px;
+        font-size: 11px;
+    }
+    .gender p span {
+        letter-spacing: 1px;
+    }
+    .cur_used {
+        margin-left: 10px;
+    }
+    .price input {
+        height: 23px;
+    }
+    .price input {
+        width: 70px;
+    }
+    .price .cents {
+        width: 20px;
+    }
+    .price > div {
+        padding-top: 5px;
+    }
+    .price div span {
+        font-size: 18px;
+    }
+    .price .unit span {
+        font-size: 13px;
+        padding-left: 15px;
+    }
+    .price .unit span:last-child{
+        padding-left: 38px;
+    }
+    .text_write textarea {
+        width: 100%;
+        height: 136px;
+        margin-top: 10px;
+    }
+    table {
+        width: 98%;
+        border-collapse: collapse;
+        margin: 0 15px;
+    }
+    caption {
+        text-align: left;
+        padding: 0 0 10px;
+    }
+    tr, td {
+        width: 15%;
+        border: 1px #cccccc solid;
+    }
+    table tr td p {
+        padding-top: 3px;
+    }
+    .thead {
+        font-size: 13px;
+        padding: 8px;
+    }
+    .decription {
+        width: 40%;
+        font-size: 13px;
+        padding: 8px;
+    }
+    tr:nth-child(1) {
+        background: #ddd;
+    }
+    tr:nth-child(3) {
+        background: #eee;
+    }
+    .check {
+        font-size: 13px;
+        padding: 6px 0;
+    }
+    .btn {
+        width: 70px;
+        height: 25px;
+        margin: 20px 15px 10px;
+    }
+    footer {
+        margin-top: 10px;
+        width: 100%;
+        height: 45px;
+        background: #F6F7FB;
+        text-align: center;
+    }
+    footer img {
+        width: 60px;
+        padding-top: 12px;
+    }
+</style>
+</body>
+</html>
