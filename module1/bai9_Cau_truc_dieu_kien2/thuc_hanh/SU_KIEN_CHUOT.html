@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kiện chuột</title>
+</head>
+<body>
+    <form>
+        <img id="myImage" src="bong.png" width="450" >
+            <p>Click button bellow to move the image right</p>
+                <input type="button" value="Click me" onclick="moveRight();">
+    </form>
+<script>
+    let imgobject = null;
+    function init() {
+        imgobject = document.getElementById('myImage');
+        imgobject.style.position = 'relative';
+        imgobject.style.left = '0px';
+    }
+    function moveRight() {
+        imgobject.style.left=parseInt(imgobject.style.left) + 10 +'px';
+    }
+    window.onload=init;
+</script>
+</body>
+</html>
