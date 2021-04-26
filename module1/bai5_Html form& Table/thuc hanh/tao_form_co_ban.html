@@ -5,32 +5,53 @@
     <title>Tao_form_co_banr</title>
 </head>
 <body>
-<form action="simpleform.html" method="get" class="wufoo">
-    <h2> Order Form</h2>
-    <p>What would you like to buy?</p>
-    <select>
-        <option value = "  ">A</option>
-        <option>B (+  0.5$)</option>
-        <option>C (+  0.5$)</option>
-    </select>
-    <p>How many would you like to order?</p>
-    <input type="radio" name="rd">1 - $10 <br>
-    <input type="radio" name="rd"/> 2 - $20 <br/>
-    <input type="radio" name="rd"/> 3 - $25 <br/>
-    <p>Name <span style="color: red">*</span> </p>
-    <input type = "text" name="firstname" placeholder="FirstName" size="15"/>
-    <input type = "text" name="lastname" placeholder="LastName" size="15"/>
-    <p>Email</p>
-    <input type = "text" name="email" size="35"/>
-    <p>Phone Number</p>
-    <input type = "text" name="phone1" size="5"/> -
-    <input type = "text" name="phone2" size="5"/> -
-    <input type = "text" name="phone3" size="5"/>
-    <p><input type = "button" name="btSubmit" value="Submit"/></p>
-</form>
+<div id="nnn">
+    <form>
+        <fieldset style="width: 20%">
+            <h2>Order form</h2>
+            <p>What would you like to buy?</p>
+            <div class = "kkk">
+                <select>
+                    <option value=" ">A</option>
+                    <option>B + $0.5</option>
+                    <option>C + $0.75</option>
+                </select>
+            </div>
+
+            <p>How many would you like to order?</p>
+            <input type="radio" id="1-$10" value="1-$10" name="ld">1-$10<br>
+            <input type="radio" id="2-$10" value="2-$20" name="ld" >2-$20<br>
+            <input type="radio" id="3-$30" value="3-$30" name="ld">3-$30<br>
+            <p >Name<span style="color: red">*</span></p>
+            <input type="text" name="FirstName" size="10" placeholder="FirstName">
+            <input type="text" name="LastName" size="10" placeholder="LastName">
+            <p>Email</p>
+            <input type="text" size="27">
+            <p>Phone number</p>
+            <input type="text" size="4" placeholder="XXXX">-
+            <input type="text" size="3" placeholder="XXX">-
+            <input type="text" size="3" placeholder="XXX"><br><br>
+            <button value="summit"> submit</button>
+        </fieldset>
+    </form>
+</div>
 <style>
     .wufoo {
         font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+    }
+    input  {
+        border-style: solid;
+    }
+
+    select{
+        border-style: solid;
+    }
+
+    fieldset {
+        display: block;
+        box-shadow: 0px 0px 7px 7px #c2daf0;
+        margin-left: 50%;
+        transform: translateX(-50%);
     }
 </style>
 </body>
