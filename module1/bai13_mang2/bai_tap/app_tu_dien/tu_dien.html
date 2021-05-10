@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<div class="container">
+    <div class="vietnamese">
+        <label>Tiếng Việt</label>
+        <input class="input" type="text">
+        <input onclick="result()" value="Search" type="button">
+    </div>
+    <button onclick="changeLanguage()" class="change">
+        <img src="pngtree-double-direction-arrow-icon-png-image_4243701.jpg" height="10000"
+             width="10000"/>
+    </button>
+    <br/>
+    <div class="english">
+        <label>Dịch sang Tiếng Anh</label>
+        <input id="result" style="margin: 20px 30px;">
+    </div>
+</div>
+<style>
+    body {
+        width: 500px;
+        margin: 200px auto;
+    }
+    .container {
+        position: relative;
+        width: 100%;
+
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .change{
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        width: 40px;
+        height: 30px;
+        position: absolute;
+        top: 60px;
+        left: 240px;
+    }
+    .change:active {
+        display: none;
+    }
+    .vietnamese,
+    .english {
+        display: flex;
+    }
+    .vietnamese label,
+    .english label {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    .input, #result {
+        padding-left: 10px;
+        font-size: 20px;
+        outline: none;
+        height: 30px;
+        flex: 1;
+    }
+    .english {
+        margin-top: 45px;
+    }
+</style>
+<script>
+    let english = ["World", "History", "Job", "Girl", "boy", "Map", ];
+    let vietnamese = ["Thế giới", "Lịch sử", "Công việc", "Con gái", "Con trai", "Bản đồ"];
+    function result() {
+        let text = document.querySelector("input").value.toLowerCase();
+        let check = false;
+        for (let i = 0; i < vietnamese.length; i++) {
+            if (text == vietnamese[i].toLowerCase()) {
+                check = true;
+                document.getElementById("result").value = english[i];
+                break;
+            }
+        }
+        if (!check) {
+            document.getElementById("result").value = "Không thấy";
+
+        }
+    }
+
+
+</script>
+</body>
+</html>
