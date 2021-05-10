@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra so nguyen to</title>
+</head>
+<form>
+    <input type="number" size="8" value="2" name="ktra" />
+    <input type="button" value="Click" onclick="alert(isPrime(ktra.value))" />
+</form>
+
+<script language="javascript">
+    function isPrime(number) {
+        var pointer = true;
+        if (number < 2) {
+            pointer = false;
+        } else {
+            for (var i = 2; i < number-1; i++) {
+                if (number % i == 0) {
+                    pointer = false;
+                    break;
+                }
+            }
+        }
+        if (pointer == true) {
+            return (number + " là số nguyên tố");
+        } else {
+            return (number + " không phải là số nguyên tố");
+        }
+    }
+</script>
+</body>
+</html>
