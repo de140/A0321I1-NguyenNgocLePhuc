@@ -59,15 +59,15 @@
         let listFamousPeople = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
         let listConstellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
 
-        find(string);
+        find(listFamousPeople);
 
         function find(string) {
             let name = prompt("Nhập tên Ngôi sao cần tìm");
             let check = false;
-            for (let i = 0; i < string.length; i++) {
-                if (name == string[i].toLowerCase()) {
+            for (let i = 0; i < listFamousPeople.length; i++) {
+                if (name == listFamousPeople[i].toLowerCase()) {
                     check = true;
-                    alert(listConstellation[i]);
+                    document.getElementById("find").value = listConstellation[i];
                     break;
                 }
             }
