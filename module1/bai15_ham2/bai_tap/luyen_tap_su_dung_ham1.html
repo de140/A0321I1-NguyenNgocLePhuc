@@ -64,10 +64,10 @@
         function find(string) {
             let name = prompt("Nhập tên Ngôi sao cần tìm");
             let check = false;
-            for (let i = 0; i < listFamousPeople.length; i++) {
-                if (name == listFamousPeople[i].toLowerCase()) {
+            for (let i = 0; i < string.length; i++) {
+                if (name.toLowerCase() == string[i].toLowerCase()) {
                     check = true;
-                    document.getElementById("find").value = listConstellation[i];
+                    alert(listConstellation[i]);
                     break;
                 }
             }
