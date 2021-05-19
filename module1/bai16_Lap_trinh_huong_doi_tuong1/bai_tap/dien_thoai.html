@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả điện thoại</title>
+</head>
+<body>
+<script>
+    class Mobile{
+        constructor(pin,statusMobile,name) {
+            this.pin=pin;
+            this.statusMobile=statusMobile;
+            this.name=name;
+            this.smsWrite=[];
+            this.smsInbox=[];
+            this.smsSent=[];
+        }
+        isStatusMobile(){
+            if (this.statusMobile) {
+                return true;
+            } else {
+                alert("Điện thoại đang tắt. Vui lòng bật điện thoại");
+                return false;
+            }
+        }
+        chargeMobile() {
+            if (this.pin < 15) {
+                alert("pin yếu. Cần sạc điện thoại");
+                while (this.pin <= 100) {
+                    this.pin += 0.001;
+                }
+            }
+        }
+        onAndOffMoble() {
+            if (this.isStatusMobile()) {
+                this.statusMobile = false;
+            } else {
+                this.chargeMobile();
+                this.statusMobile = true;
+            }
+            this.pin--;
+        }
+        composerSms(){
+            if (this.isStatusMobile()) {
+                this.chargeMobile();
+                let sms = prompt("Nhập nội dung tin nhắn: ");
+                this.smsWrite.push(sms);
+                this.pin--;
+            }else{
+                this.onAndOffMoble();
+                this.composerSms();
+            }
+        }
+        sendSms(mobile) {
+            if (this.isStatusMobile()) {
+                this.chargeMobile();
+                if (this.smsWrite.length === 0) {
+                    this.composerSms();
+                    mobile.smsInbox.push("Người gửi: " + this.name + ". " + this.smsWrite[0]);
+                    this.smsSent.push(this.smsWrite[0]);
+                    this.smsWrite.splice(0, 1);
+                } else {
+                    let temp = "";
+                    for (let i = 0; i < this.smsWrite.length; i++) {
+                        temp += i + ": " + this.smsWrite[i] + "\n";
+                    }
+                    let index = parseInt(prompt(temp + "\n" + "Yêu cầu bạn chọn tin nhắn để gửi!"));
+                    mobile.smsInbox.push("Người gửi: " + this.name + ". " + this.smsWrite[index]);
+                    this.smsSent.push(this.smsWrite[index]);
+                    this.smsWrite.splice(index, 1);
+                }
+                this.pin--;
+            }else{
+                this.onAndOffMoble();
+                this.sendSms(mobile);
+            }
+        }
+        seenSms() {
+            if (this.isStatusMobile()) {
+                let temp = [];
+                let tempSms = "";
+                this.chargeMobile();
+                for (let i = 0; i < this.smsInbox.length; i++) {
+                    let check=false;
+                    for (let j = 0; j < this.smsInbox[i].length; j++) {
+                        if (this.smsInbox[i].charAt(j) === ":") {
+                            let tempSender = "";
+                            for (let k = j + 1; k < this.smsInbox[i].length; k++) {
+                                if (this.smsInbox[i].charAt(k) === ".") {
+                                    temp.push(tempSender);
+
+                                    check=true;
+                                    break;
+                                } else {
+                                    tempSender += this.smsInbox[i].charAt(k);
+                                }
+                            }
+                            if(check) {
+                                break;
+                            }
+                        }
+                    }
+                }
+                for (let i = 0; i < temp.length; i++) {
+                    tempSms += i + ": " + temp[i] + "\n";
+                }
+                let index = parseInt(prompt(tempSms+"\nChọn tin nhắn mà bạn muốn xem: "));
+                alert(this.smsInbox[index]);
+                this.pin--;
+            }else{
+                this.onAndOffMoble();
+                this.seenSms();
+            }
+        }
+
+    }
+    let nokia=new Mobile(100,true,"nokia");
+    let iphone=new Mobile(20,true,"iphone");
+    nokia.sendSms(iphone);
+    iphone.seenSms();
+</script>
+</body>
+</html>
