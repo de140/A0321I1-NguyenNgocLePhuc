@@ -141,8 +141,24 @@
         lottery.setNum6(random6);
         document.getElementById('rs6').value = lottery.getNum6();
     }
-
- 
+    function kiemTra() {
+        if (document.getElementById('rs1').value == 1 && document.getElementById('rs2').value == 2 &&
+            document.getElementById('rs3').value == 3 && document.getElementById('rs4').value == 4 &&
+            document.getElementById('rs5').value == 5 && document.getElementById('rs6').value == 6) {
+            alert("Trời ơi chúc mừng tỷ phú tương lai đã trúng 10 tỷ");
+        } else if (
+            document.getElementById('rs2').value == 2 && document.getElementById('rs3').value == 3 &&
+            document.getElementById('rs4').value == 4 && document.getElementById('rs5').value == 5 &&
+            document.getElementById('rs6').value == 6) {
+            alert("Trời ơi chúc mừng tỷ phú tương lai đã trúng 3 tỷ");
+        } else if (
+            document.getElementById('rs4').value == 4 && document.getElementById('rs5').value == 5 &&
+            document.getElementById('rs6').value == 6) {
+            alert("Trời ơi chúc mừng tỷ phú tương lai đã trúng 1 tỷ");
+        } else {
+            alert("Chúc bạn may mắn lần sau");
+        }
+    }
 </script>
 </body>
 </html>
