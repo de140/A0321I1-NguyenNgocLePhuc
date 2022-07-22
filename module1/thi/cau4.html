@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<h1>Quản lý sản phẩm</h1>
+
+<input type="text" id="search"><button onclick="findByName()">Tìm kiếm</button>
+
+<p id="hienThi"></p>
+<script>
+    class Congnhan {
+        constructor(STT, hoVaten, Ngaysinh,diaChi,Luong,chucVu) {
+            this.STT = STT;
+            this.hoVaten = hoVaten;
+            this.Ngaysinh = Ngaysinh;
+            this.diaChi =diaChi;
+
+        }
+
+        setSTT(STT) {
+            this.STT = STT;
+        }
+        gethoVaten() {
+            return this.hoVaten;
+        }
+        setNgaysinh(Ngaysinh) {
+            this.Ngaysinh = Ngaysinh;
+        }
+        setLuong(Luong) {
+            this.Luong = Luong;
+        }
+</body>
+</html>
